@@ -31,6 +31,12 @@ REDIS_EXPIRATION=3600
 CACHED_VERBS=GET,POST
 ```
 
+**REDIS*** variables: Connection with Redis.
+
+**REDIS_EXPIRATION**: Set a timeout (in seconds) on created key. After the timeout has expired, the key will automatically be deleted.
+
+**CACHED_VERBS**: HTTP verbs to be cached.
+
 ## 2. Date formatting
 
 **/date-formatting**
