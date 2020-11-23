@@ -25,17 +25,6 @@
             el.appendChild(dt)
             document.body.appendChild(el)
         })
-
-        dates.forEach((item) => {
-            let el = document.createElement("div")
-            el.innerHTML = "Começou "
-
-            let dt = document.createElement('span')
-            dt.className = 'js-date-formatxxx'
-            dt.innerHTML = item.toISOString()
-            el.appendChild(dt)
-            document.body.appendChild(el)
-        })
     })();
 
     (() => {
@@ -43,15 +32,15 @@
 
         function update() {
             elements.forEach(el => {
-                let novo = '';
+                let newSince = '';
                 let initial = el.dataset.initial;
                 if (initial) {
-                    novo = timeAgo(initial);
+                    newSince = timeAgo(initial);
                 } else {
                     el.setAttribute("data-initial", el.innerHTML);
-                    novo = timeAgo(el.innerHTML);
+                    newSince = timeAgo(el.innerHTML);
                 }
-                el.innerHTML = novo;
+                el.innerHTML = newSince;
             });
         }
 
