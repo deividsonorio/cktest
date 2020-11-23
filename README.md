@@ -46,4 +46,5 @@ Simple Javascript "started ago" code, with the required behavior.
 ## 3. Apply style
 **/style**
 
-CSS style using [BEM](http://getbem.com/introduction/).
+* CSS style using [BEM](http://getbem.com/introduction/).
+* **SASS file available.**

@@ -6,27 +6,22 @@
     letter-spacing: -0.01em;
     margin: 0 auto;
     width: 324px;
-
 }
 
 .header__title {
     font-weight: bold;
     margin: 10px 0 5px 10px;
 }
-
 .header__time {
     float: left;
     font-weight: lighter;
     margin: 5px 0 10px 10px;
 }
-
 .header__percentage {
     float: right;
-    font-weight: bold;
     margin-right: 10px;
     margin-top: -12px;
 }
-
 .header__tomatometer {
     margin-bottom: -4px;
     width: 20px;
@@ -42,16 +37,14 @@
     background: #000000;
     clear: both;
 }
-
 .review__image {
     mask-image: linear-gradient(to top, transparent 1%, black 50%);
     object-fit: cover;
     -webkit-mask-image: linear-gradient(to top, transparent 1%, black 50%);
 }
-
 .review__button {
-    background-color: rgb(255, 255, 255, 0.7);
-    border: 2px solid rgb(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 40px;
     color: #000000;
     font-size: 16px;
