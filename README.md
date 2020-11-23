@@ -9,7 +9,7 @@ The files for each challenge are located in the corresponding folders.
 **/cache**
 
 The Cache uses the Redis module (https://github.com/phpredis/phpredis). 
-The testes were made with Redis running in Windows and Apache with Redis dll enabled.
+The tests were made with Redis running in Windows and Apache with Redis dll enabled.
 The "index.php" file is only an example.
 
 **Requirements**:
