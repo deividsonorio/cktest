@@ -1,0 +1,5 @@
+#Ignore files
+.idea/
+cache/vendor/
+cache/cache.iml
+cache/.idea/

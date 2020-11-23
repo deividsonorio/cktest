@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CrossKnowledge - Code challenge</title>
+</head>
+<body>
+<script>
+    // This will create elements for testing, don't change this code
+    (() => {
+        const MS_PER_MINUTE = 60000
+        const NOW = new Date()
+        let minutes = [0, 1, 30, 60, 6 * 60, 23 * 60, 24 * 60]
+        let dates = []
+
+        minutes.forEach((i) => dates.push(new Date(NOW - i * MS_PER_MINUTE)))
+
+        dates.forEach((item) => {
+            let el = document.createElement("div")
+            el.innerHTML = "Started "
+
+            let dt = document.createElement('span')
+            dt.className = 'js-date-format'
+            dt.innerHTML = item.toISOString()
+            el.appendChild(dt)
+            document.body.appendChild(el)
+        })
+
+        dates.forEach((item) => {
+            let el = document.createElement("div")
+            el.innerHTML = "Começou "
+
+            let dt = document.createElement('span')
+            dt.className = 'js-date-formatxxx'
+            dt.innerHTML = item.toISOString()
+            el.appendChild(dt)
+            document.body.appendChild(el)
+        })
+    })();
+
+    (() => {
+        let elements = document.querySelectorAll('.js-date-format');
+
+        function update() {
+            elements.forEach(el => {
+                let novo = '';
+                let initial = el.dataset.initial;
+                if (initial) {
+                    novo = timeAgo(initial);
+                } else {
+                    el.setAttribute("data-initial", el.innerHTML);
+                    novo = timeAgo(el.innerHTML);
+                }
+                el.innerHTML = novo;
+            });
+        }
+
+        let loop = setInterval(update, 1000);
+
+        function timeAgo(dateParam) {
+            if (!dateParam)
+                return null;
+
+            const date = typeof dateParam === 'object' ? dateParam : new Date(dateParam);
+            const today = new Date();
+            const isToday = today.toDateString() === date.toDateString();
+
+            if (!isToday)
+                return dateParam;
+
+            const seconds = Math.floor((today - date) / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(seconds / 3600);
+
+            if (seconds < 60) {
+                if (seconds == 1)
+                    return `${seconds} second ago`
+                return `${seconds} seconds ago`;
+            } else if (minutes < 60) {
+                if (minutes == 1)
+                    return `${minutes} minute ago`;
+                return `${minutes} minutes ago`;
+            } else if (hours < 24) {
+                if (hours == 1)
+                    return `${hours} hour ago`;
+                return `${hours} hours ago`;
+            }
+        }
+    })();
+
+</script>
+</body>
+</html>
