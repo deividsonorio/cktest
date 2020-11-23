@@ -7,18 +7,16 @@ class RedisConn
 {
     private string $host;
     private string $port;
-    private string $ttl;
     public $conn;
 
     public function __construct()
     {
         $this->host = $_ENV['REDIS_HOST'];
         $this->port = $_ENV['REDIS_PORT'];
-        $this->timeout = $_ENV['REDIS_EXPIRATION'];
         $redis = null;
         try {
             $redis = new \Redis();
-            $redis->connect($this->host, $this->port, $this->timeout);
+            $redis->connect($this->host, $this->port);
 
         } catch (Exception $ex) {
             echo $ex->getMessage();

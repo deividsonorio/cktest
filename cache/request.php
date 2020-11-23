@@ -95,7 +95,7 @@ class SimpleJsonRequest
     public function setRedisKey(string $key, string $value)
     {
         $redis = new RedisConn();
-        $redis->conn->set($key, $value);
+        $redis->conn->set($key, $value, $_ENV['REDIS_KEY_TIMEOUT']);
     }
 
     /**

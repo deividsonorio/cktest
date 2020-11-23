@@ -27,13 +27,13 @@ Default environment variables in an environment file named .env
 PROJECT_NAME="CrossKnowledge Test"
 REDIS_HOST=LOCALHOST
 REDIS_PORT=6379
-REDIS_EXPIRATION=3600
+REDIS_KEY_TIMEOUT=3600
 CACHED_VERBS=GET,POST
 ```
 
 **REDIS*** variables: Connection with Redis.
 
-**REDIS_EXPIRATION**: Set a timeout (in seconds) on created key. After the timeout has expired, the key will automatically be deleted.
+**REDIS_KEY_TIMEOUT**: Set a timeout (in seconds) on created key. After the timeout has expired, the key will automatically be deleted.
 
 **CACHED_VERBS**: HTTP verbs to be cached.
 

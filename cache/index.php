@@ -1,25 +1,23 @@
 <?php
 
 include_once __DIR__ . './request.php';
-//$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-//$dotenv->load();
-//
-//var_dump(getenv('PROJECT_NAME'));
-//var_dump($_ENV['PROJECT_NAME']);
 
 $urlGet = "https://httpbin.org/get";
 $urlPost = "https://httpbin.org/post";
 $urlPut = "https://httpbin.org/put";
-$parameters = [1, 2, 3, 4, 5222416];
+$urlPatch = "https://httpbin.org/patch";
+$urlDelete = "https://httpbin.org/delete";
+$parameters = [1, 2, 3, 'test'];
+$data = $parameters;
 
-//$teste = SimpleJsonRequest::get($urlGet);
-//$teste = SimpleJsonRequest::get($urlGet, $parameters);
-$teste = SimpleJsonRequest::post($urlPost, $parameters, ['edfxxxgXXZZw']);
+//$request = SimpleJsonRequest::get($urlGet);
+$request = SimpleJsonRequest::get($urlGet, $parameters);
+//$request = SimpleJsonRequest::post($urlPost, $parameters, $data);
+//$request = SimpleJsonRequest::put($urlPut, $parameters, $data);
+//$request = SimpleJsonRequest::patch($urlPatch, $parameters, $data);
+//$request = SimpleJsonRequest::delete($urlDelete, $parameters, $data);
 
-//$teste = SimpleJsonRequest::put($urlPut, $parameters, ['edafgxzssszzdw']);
-
-
-print_r($teste);
+print_r($request);
 
 
 
